@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<VBox spacing="20" alignment="CENTER" styleClass="form-container" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bank.gui.UpdateClientInfoController">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+    <Label text="Update Client Info" styleClass="form-title"/>
+    <TextField fx:id="clientIdField" promptText="Client ID"/>
+    <TextField fx:id="emailField" promptText="Email"/>
+    <TextField fx:id="phoneField" promptText="Phone Number"/>
+    <TextField fx:id="streetField" promptText="Street"/>
+    <TextField fx:id="cityField" promptText="City"/>
+    <TextField fx:id="stateField" promptText="State"/>
+    <TextField fx:id="pincodeField" promptText="Pin Code"/>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Update" onAction="#handleUpdate" styleClass="action-button"/>
+        <Button text="Cancel" onAction="#handleCancel" styleClass="cancel-button"/>
+    </HBox>
+    <Label fx:id="statusLabel" styleClass="error"/>
+</VBox>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<BorderPane fx:controller="com.bank.gui.ClientDashboardController" styleClass="dashboard"
+            xmlns:fx="http://javafx.com/fxml">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+
+    <!-- Top Header -->
+    <top>
+        <HBox styleClass="dashboard-header" spacing="10" alignment="CENTER_LEFT">
+            <Label text="🏦 Nova Bank - Client Dashboard" styleClass="dashboard-title"/>
+        </HBox>
+    </top>
+
+    <!-- Sidebar Navigation -->
+    <left>
+        <VBox spacing="15" styleClass="sidebar" prefWidth="200">
+            <Button text="🏠 Accounts" onAction="#showAccounts" styleClass="sidebar-button"/>
+            <Button text="💰 Deposit" onAction="#showDeposit" styleClass="sidebar-button"/>
+            <Button text="💸 Withdraw" onAction="#showWithdraw" styleClass="sidebar-button"/>
+            <Button text="🔄 Transfer" onAction="#showTransfer" styleClass="sidebar-button"/>
+            <Button text="📄 Loans" onAction="#showLoans" styleClass="sidebar-button"/>
+            <Button text="📈 Transactions" onAction="#showTransactions" styleClass="sidebar-button"/>
+            <Button text="💬 Feedback" onAction="#showFeedback" styleClass="sidebar-button"/>
+            <Button text="👤 Profile" onAction="#showProfile" styleClass="sidebar-button"/>
+            <Button text="🚪 Logout" onAction="#logout" styleClass="sidebar-button logout-button"/>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area"/>
+    </center>
+</BorderPane>

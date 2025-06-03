@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<VBox spacing="20" alignment="CENTER" styleClass="form-container" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bank.gui.ReportAccountsController">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+    <Label text="Accounts Created Report" styleClass="form-title"/>
+    <Button text="Generate Report" onAction="#handleGenerateReport" styleClass="action-button"/>
+    <TableView fx:id="accountsTable" styleClass="table-view">
+        <columns>
+            <TableColumn fx:id="accountNumberCol" text="Account Number"/>
+            <TableColumn fx:id="accountTypeCol" text="Type"/>
+            <TableColumn fx:id="createdAtCol" text="Created At"/>
+            <TableColumn fx:id="clientIdCol" text="Client ID"/>
+        </columns>
+    </TableView>
+    <Label fx:id="statusLabel" styleClass="error"/>
+</VBox>

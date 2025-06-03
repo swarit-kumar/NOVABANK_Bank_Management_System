@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox spacing="20" alignment="CENTER" styleClass="form-container" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bank.gui.CreateAccountController">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+    <Label text="Create Account" styleClass="form-title"/>
+    <TextField fx:id="clientIdField" promptText="Client ID"/>
+    <ComboBox fx:id="accountTypeCombo" promptText="Select Account Type">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Savings"/>
+                <String fx:value="Current"/>
+                <String fx:value="Fixed Deposit"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <TextField fx:id="initialBalanceField" promptText="Initial Balance"/>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Create" onAction="#handleCreate" styleClass="action-button"/>
+        <Button text="Clear" onAction="#handleClear" styleClass="cancel-button"/>
+    </HBox>
+    <Label fx:id="statusLabel" styleClass="status-label"/>
+</VBox>

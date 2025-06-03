@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<AnchorPane styleClass="form-anchor" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.bank.gui.ApproveLoanController">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+    <VBox fx:id="formVBox" spacing="20" alignment="CENTER" styleClass="form-container"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0">
+        <Label text="Approve Loan" styleClass="form-title"/>
+        <TextField fx:id="loanNumberField" promptText="Loan Number"/>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Approve" onAction="#handleApprove" styleClass="action-button"/>
+            <Button text="Clear" onAction="#handleClear" styleClass="cancel-button"/>
+        </HBox>
+        <Label fx:id="statusLabel" styleClass="status-label"/>
+    </VBox>
+</AnchorPane>

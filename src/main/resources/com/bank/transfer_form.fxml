@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<VBox spacing="20" alignment="CENTER" styleClass="form-container" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bank.gui.TransferController">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+    <Label text="Transfer Funds" styleClass="form-title"/>
+    <TextField fx:id="sourceAccountField" promptText="Source Account Number"/>
+    <TextField fx:id="destAccountField" promptText="Destination Account Number"/>
+    <TextField fx:id="amountField" promptText="Amount"/>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Transfer" onAction="#handleTransfer" styleClass="action-button"/>
+        <Button text="Cancel" onAction="#handleCancel" styleClass="cancel-button"/>
+    </HBox>
+    <Label fx:id="statusLabel" styleClass="error"/>
+</VBox>

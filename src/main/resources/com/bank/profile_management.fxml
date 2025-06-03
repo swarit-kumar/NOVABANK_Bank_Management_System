@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<VBox spacing="20" styleClass="form-container" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bank.gui.ProfileController">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+    <Label text="Profile Management" styleClass="form-title"/>
+    <TabPane fx:id="profileTabs">
+        <Tab text="View Profile">
+            <VBox spacing="10" alignment="CENTER_LEFT" styleClass="profile-view">
+                <Label fx:id="nameLabel" text="Name: "/>
+                <Label fx:id="emailLabel" text="Email: "/>
+                <Label fx:id="phoneLabel" text="Phone: "/>
+                <Label fx:id="addressLabel" text="Address: "/>
+                <Label fx:id="dobLabel" text="DOB: "/>
+            </VBox>
+        </Tab>
+        <Tab text="Update Profile">
+            <VBox spacing="15" alignment="CENTER">
+                <TextField fx:id="firstNameField" promptText="First Name"/>
+                <TextField fx:id="lastNameField" promptText="Last Name"/>
+                <TextField fx:id="emailField" promptText="Email"/>
+                <TextField fx:id="phoneField" promptText="Phone Number"/>
+                <TextField fx:id="streetField" promptText="Street"/>
+                <TextField fx:id="cityField" promptText="City"/>
+                <TextField fx:id="stateField" promptText="State"/>
+                <TextField fx:id="pinCodeField" promptText="Pin Code"/>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Update" onAction="#handleUpdate" styleClass="action-button"/>
+                    <Button text="Clear" onAction="#handleClear" styleClass="cancel-button"/>
+                </HBox>
+                <Label fx:id="updateErrorLabel" styleClass="error"/>
+            </VBox>
+        </Tab>
+        <Tab text="Change Password">
+            <VBox spacing="15" alignment="CENTER">
+                <PasswordField fx:id="currentPasswordField" promptText="Current Password"/>
+                <PasswordField fx:id="newPasswordField" promptText="New Password"/>
+                <PasswordField fx:id="confirmPasswordField" promptText="Confirm New Password"/>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Change" onAction="#handleChangePassword" styleClass="action-button"/>
+                    <Button text="Clear" onAction="#handleClearPassword" styleClass="cancel-button"/>
+                </HBox>
+                <Label fx:id="passwordErrorLabel" styleClass="error"/>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

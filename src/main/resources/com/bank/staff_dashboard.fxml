@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<BorderPane fx:controller="com.bank.gui.StaffDashboardController" styleClass="dashboard"
+            xmlns:fx="http://javafx.com/fxml">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+
+    <!-- Top Header -->
+    <top>
+        <HBox styleClass="dashboard-header" spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="headerLabel" text="🏦 Nova Bank - Staff Dashboard" styleClass="dashboard-title"/>
+        </HBox>
+    </top>
+
+    <!-- Sidebar Navigation -->
+    <left>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <VBox spacing="15" styleClass="sidebar" prefWidth="200">
+                <!-- Account Management -->
+                <Label text="Account Management" styleClass="sidebar-label"/>
+                <Button text="🆕 Create Account" onAction="#showCreateAccount" styleClass="sidebar-button"/>
+                <Button text="🔒 Close Account" onAction="#showCloseAccount" styleClass="sidebar-button"/>
+                <Button text="⛔ Suspend Account" onAction="#showSuspendAccount" styleClass="sidebar-button"/>
+                <Button text="💰 Deposit" onAction="#showDeposit" styleClass="sidebar-button"/>
+                <Button text="💸 Withdraw" onAction="#showWithdraw" styleClass="sidebar-button"/>
+                <Button text="🔄 Transfer" onAction="#showTransfer" styleClass="sidebar-button"/>
+                <Button text="📋 View Accounts" onAction="#showViewAccounts" styleClass="sidebar-button"/>
+                <!-- Loan Management -->
+                <Label text="Loan Management" styleClass="sidebar-label"/>
+                <Button text="💳 Pay Loan" onAction="#showLoanPayment" styleClass="sidebar-button"/>
+                <Button text="📊 Track Payments" onAction="#showTrackPayments" styleClass="sidebar-button"/>
+                <Button text="🔧 Update Loan Status" onAction="#showUpdateLoanStatus" styleClass="sidebar-button"/>
+                <!-- Client Management -->
+                <Label text="Client Management" styleClass="sidebar-label"/>
+                <Button text="👤 View Client Info" onAction="#showViewClientInfo" styleClass="sidebar-button"/>
+                <Button text="✏️ Update Client Info" onAction="#showUpdateClientInfo" styleClass="sidebar-button"/>
+                <Button text="💬 View Feedback" onAction="#showViewFeedback" styleClass="sidebar-button"/>
+                <!-- Reporting -->
+                <Label text="Reporting" styleClass="sidebar-label"/>
+                <Button text="📄 Accounts Report" onAction="#showReportAccounts" styleClass="sidebar-button"/>
+                <Button text="📈 Transactions Report" onAction="#showReportTransactions" styleClass="sidebar-button"/>
+                <Button text="📊 Loans Report" onAction="#showReportLoans" styleClass="sidebar-button"/>
+                <Button text="🕒 Transaction History" onAction="#showTransactionHistory" styleClass="sidebar-button"/>
+                <!-- Logout -->
+                <Button text="🚪 Logout" onAction="#logout" styleClass="sidebar-button logout-button"/>
+            </VBox>
+        </ScrollPane>
+    </left>
+
+
+    <!-- Main Content Area -->
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area"/>
+    </center>
+</BorderPane>

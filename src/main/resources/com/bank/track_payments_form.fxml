@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<VBox spacing="20" alignment="CENTER" styleClass="form-container" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bank.gui.TrackPaymentsController">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+    <Label text="Track Loan Payments" styleClass="form-title"/>
+    <TextField fx:id="loanNumberField" promptText="Loan Number"/>
+    <Button text="View Payments" onAction="#handleViewPayments" styleClass="action-button"/>
+    <TableView fx:id="paymentsTable" styleClass="table-view">
+        <columns>
+            <TableColumn fx:id="paymentNumberCol" text="Payment Number"/>
+            <TableColumn fx:id="paymentDateCol" text="Date"/>
+            <TableColumn fx:id="paidAmountCol" text="Paid Amount"/>
+            <TableColumn fx:id="leftAmountCol" text="Remaining"/>
+        </columns>
+    </TableView>
+    <Label fx:id="statusLabel" styleClass="error"/>
+</VBox>
