@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<BorderPane fx:controller="com.bank.gui.AdminDashboardController" styleClass="dashboard"
+            xmlns:fx="http://javafx.com/fxml">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+
+    <!-- Top Header -->
+    <top>
+        <HBox styleClass="dashboard-header" spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="headerLabel" text="🏦 Nova Bank - Admin Dashboard" styleClass="dashboard-title"/>
+        </HBox>
+    </top>
+
+    <!-- Sidebar Navigation -->
+    <left>
+        <VBox spacing="15" styleClass="sidebar" prefWidth="200">
+            <Label text="Staff Management" styleClass="sidebar-label"/>
+            <Button text="👥 View All Staff" onAction="#showViewStaff" styleClass="sidebar-button"/>
+            <Label text="Loan Management" styleClass="sidebar-label"/>
+            <Button text="📊 Avg Loan Amounts" onAction="#showAvgLoanAmounts" styleClass="sidebar-button"/>
+            <Button text="📈 Staff Loan Analytics" onAction="#showStaffLoanAnalytics" styleClass="sidebar-button"/>
+            <Button text="💰 All Loans" onAction="#showAllLoans" styleClass="sidebar-button"/>
+            <Button text="✅ Approve Loan" onAction="#showApproveLoan" styleClass="sidebar-button"/>
+            <Label text="Client Management" styleClass="sidebar-label"/>
+            <Button text="🙅 Clients Without Loans" onAction="#showClientsWithoutLoans" styleClass="sidebar-button"/>
+            <Button text="🏦 Clients with Savings &amp; Loan" onAction="#showClientsWithSavingsLoan" styleClass="sidebar-button"/>
+            <Button text="🚪 Logout" onAction="#logout" styleClass="sidebar-button logout-button"/>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area" alignment="CENTER"/>
+    </center>
+</BorderPane>
